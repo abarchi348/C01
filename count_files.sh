@@ -1,14 +1,13 @@
 #!/bin/bash
-# Ce script compte le nombre de fichiers dans un dossier donné
 
-read folder
+# Demander à l'utilisateur d'entrer le chemin d'un répertoire
+read -p "Entrez le chemin du répertoire : " a
 
-# Vérifie si le dossier existe
-if [ -d "$folder" ]; then
-  # Utilise find pour lister tous les fichiers (-type f), puis wc -l pour les compter
-  count=$(find "$folder" -type f | wc -l)
-  echo "Le dossier $folder contient $count fichier(s)."
+# Vérifier que le répertoire existe
+if [ -d "$a" ]; then
+  # Compter les fichiers (exclut les dossiers)
+  n=$(ls -p "$a" | grep -v / | wc -l)
+  echo "Le répertoire '$a' contient $n fichier(s)."
 else
-  # Affiche un message d'erreur si le dossier n'existe pas
-  echo "Le dossier $folder n'existe pas."
+  echo "Erreur : '$a' n'est pas un répertoire valide."
 fi
