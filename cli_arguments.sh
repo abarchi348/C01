@@ -1,10 +1,7 @@
 #!/bin/bash
-read -a arg 
-set -- "${arg[@]}"
-# Affichage des arguments avec $1, $2, ... et shift
-index=1
-while [ "$1" ]; do
-    echo "Argument $index : $1"
-    shift
-    index=$((index + 1))
+read -a arg
+i=1
+
+for arg in "${arg[@]}"; do
+    echo "Argument $((i++)): $arg"
 done
