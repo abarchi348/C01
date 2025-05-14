@@ -5,4 +5,4 @@ read a
 # Vérifier que le chemin entré est bien un répertoire
 n="$(ls "$a" | wc -l)"
 b=$(echo $n)
-echo "Le répertoire $a contient $b fichier(s)."
+echo "Le dossier "$a" contient "$b" fichier(s)."
