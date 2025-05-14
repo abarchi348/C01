@@ -1,5 +1,5 @@
 #!/bin/bash
-read  arg 
+read -a arg 
 set -- "${arg[@]}"
 # Affichage des arguments avec $1, $2, ... et shift
 index=1
